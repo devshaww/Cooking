@@ -64,4 +64,8 @@ public class CuttingCounter : BaseCounter, IProgressible
 		recipeSO = null;
 		return false;
 	}
+
+	new public static void ResetStaticData() {
+		OnAnyCut = null;
+	}
 }

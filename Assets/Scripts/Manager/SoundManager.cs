@@ -38,7 +38,7 @@ public class SoundManager : MonoBehaviour
 
     private void Player_OnPickupSomething(object sender, System.EventArgs e)
     {
-         PlaySound(audioClipRefsSO.objectPickup, Player.Instance.transform.position);
+        PlaySound(audioClipRefsSO.objectPickup, Player.Instance.transform.position);
     }
 
     private void CuttingCounter_OnAnyCut(object sender, System.EventArgs e)

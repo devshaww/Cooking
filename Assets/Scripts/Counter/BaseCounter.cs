@@ -46,4 +46,8 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectOwner
 	{
 		return kitchenObject != null;
 	}
+
+	public static void ResetStaticData() {
+		OnAnyObjectPlacedHere = null;
+	}
 }

@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IKitchenObjectOwner
+public class Player : NetworkBehaviour, IKitchenObjectOwner
 {
 	public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
 	public event EventHandler OnPickupSomething;
@@ -13,7 +12,7 @@ public class Player : MonoBehaviour, IKitchenObjectOwner
 
 	public static Player Instance { get; private set; }
 
-    [SerializeField] private int moveSpeed;
+	[SerializeField] private int moveSpeed;
 	[SerializeField] private LayerMask counterLayerMask;
 	[SerializeField] private Transform holdPoint;
 
@@ -33,7 +32,8 @@ public class Player : MonoBehaviour, IKitchenObjectOwner
 
 	private void Awake()
 	{
-		if (Instance != null) {
+		if (Instance != null)
+		{
 			Debug.LogError("More than one Player instance");
 		}
 		Instance = this;
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour, IKitchenObjectOwner
 
 	private void Start()
 	{
-        inputHandler = GetComponent<InputHandler>();
+		inputHandler = GetComponent<InputHandler>();
 		inputHandler.OnInteractAction += InputHandler_OnInteractAction;
 		inputHandler.OnInteractAlternateAction += InputHandler_OnInteractAlternateAction;
 	}
