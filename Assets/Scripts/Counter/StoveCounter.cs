@@ -18,6 +18,7 @@ public class StoveCounter : BaseCounter, IProgressible
 		Burned
 	}
 
+	// current recipe with input and output and fryingTime
 	private FryingRecipeSO fryingRecipeSO;
 	private float fryingProgress;
 	private State state = State.Idle;
