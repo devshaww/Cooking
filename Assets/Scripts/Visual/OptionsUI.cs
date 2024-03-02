@@ -11,7 +11,7 @@ public class OptionsUI : MonoBehaviour
         Instance = this;
         closeButton.onClick.AddListener(() => {
             Hide();
-            GamePauseUI.Instance.Hide();
+            //GamePauseUI.Instance.Hide();
         });
     }
 

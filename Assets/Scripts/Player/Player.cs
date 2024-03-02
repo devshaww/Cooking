@@ -15,11 +15,12 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 	[SerializeField] private int moveSpeed;
 	[SerializeField] private LayerMask counterLayerMask;
 	[SerializeField] private Transform holdPoint;
+	[SerializeField] private InputHandler inputHandler;
 
 	private bool isWalking;
     public bool IsWalking { get => isWalking; }
 
-    private InputHandler inputHandler;
+    //private InputHandler inputHandler;
 
 	private Vector3 moveDirection;
 	private Vector3 prevMoveDirection;
@@ -41,7 +42,7 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 
 	private void Start()
 	{
-		inputHandler = GetComponent<InputHandler>();
+		//inputHandler = GetComponent<InputHandler>();
 		inputHandler.OnInteractAction += InputHandler_OnInteractAction;
 		inputHandler.OnInteractAlternateAction += InputHandler_OnInteractAlternateAction;
 	}
