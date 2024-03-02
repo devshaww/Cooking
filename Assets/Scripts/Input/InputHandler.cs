@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,12 +37,12 @@ public class InputHandler : MonoBehaviour
 		OnPauseAction?.Invoke(this, EventArgs.Empty);
     }
 
-    private void InteractAlternate_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void InteractAlternate_performed(InputAction.CallbackContext obj)
 	{
 		OnInteractAlternateAction?.Invoke(this, EventArgs.Empty);
 	}
 
-	private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+	private void Interact_performed(InputAction.CallbackContext obj)
 	{
 		OnInteractAction?.Invoke(this, EventArgs.Empty);
 	}

@@ -10,20 +10,31 @@ public class GameStartCountdownUI : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.OnStateChange += GameManager_OnStateChange;
-        gameObject.SetActive(false);
+        Hide();
     }
 
     private void GameManager_OnStateChange(object sender, System.EventArgs e)
     {
         if (GameManager.Instance.IsCountdownToStart()) {
-            gameObject.SetActive(true);
+            Show();
         } else {
-            gameObject.SetActive(false);
+            Hide();
         }
     }
 
     private void Update()
     {
         countdownText.text = Mathf.Ceil(GameManager.Instance.GetCountdownToStartTimer()).ToString();
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+        GamePauseUI.Instance.Hide();
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
     }
 }

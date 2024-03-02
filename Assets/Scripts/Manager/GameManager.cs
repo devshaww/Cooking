@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
     public event EventHandler OnStateChange;
     public event EventHandler OnGamePaused;
     public event EventHandler OnGameUnpaused;
@@ -18,8 +19,8 @@ public class GameManager : MonoBehaviour
     private State state;
     private float waitingToStartTimer = 1f;
     private float countdownToStartTimer = 3f;
-    private float gamePlayingTimer = 20f;
-    private readonly float gamePlayingTimerMax = 20f;
+    private float gamePlayingTimer = 10f;
+    private readonly float gamePlayingTimerMax = 10f;
     private bool isGamePaused = false;
 
     private void Awake()
