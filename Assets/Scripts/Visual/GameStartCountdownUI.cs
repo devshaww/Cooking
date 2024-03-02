@@ -30,7 +30,6 @@ public class GameStartCountdownUI : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
-        GamePauseUI.Instance.Hide();
     }
 
     public void Show()

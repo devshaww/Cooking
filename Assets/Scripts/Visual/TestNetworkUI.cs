@@ -9,7 +9,6 @@ public class TestNetworkUI : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.SetActive(false);
         hostButton.onClick.AddListener(() => {
             NetworkManager.Singleton.StartHost();
             gameObject.SetActive(false);
@@ -19,5 +18,20 @@ public class TestNetworkUI : MonoBehaviour
             NetworkManager.Singleton.StartClient();
             gameObject.SetActive(false);
         });
+    }
+
+    private void Start()
+    {
+        Hide();
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);        
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
     }
 }
