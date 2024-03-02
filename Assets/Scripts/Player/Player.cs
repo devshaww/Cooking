@@ -10,7 +10,7 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 		public BaseCounter selectedCounter;
 	}
 
-	public static Player Instance { get; private set; }
+	//public static Player Instance { get; private set; }
 
 	[SerializeField] private int moveSpeed;
 	[SerializeField] private LayerMask counterLayerMask;
@@ -33,18 +33,18 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 
 	private void Awake()
 	{
-		if (Instance != null)
-		{
-			Debug.LogError("More than one Player instance");
-		}
-		Instance = this;
+		//if (Instance != null)
+		//{
+		//	Debug.LogError("More than one Player instance");
+		//}
+		//Instance = this;
 	}
 
 	private void Start()
 	{
 		//inputHandler = GetComponent<InputHandler>();
-		inputHandler.OnInteractAction += InputHandler_OnInteractAction;
-		inputHandler.OnInteractAlternateAction += InputHandler_OnInteractAlternateAction;
+		InputHandler.Instance.OnInteractAction += InputHandler_OnInteractAction;
+		InputHandler.Instance.OnInteractAlternateAction += InputHandler_OnInteractAlternateAction;
 	}
 
 	private void InputHandler_OnInteractAlternateAction(object sender, EventArgs e)
@@ -67,12 +67,15 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 
 	private void Update()
     {
+		if (!IsOwner) {
+			return;
+		}
 		CheckMovement();
-		CheckInteraction();
+		CheckInteraction();	
     }
 
     private void CheckMovement() {
-		Vector2 inputVector = inputHandler.GetMovementVector();
+		Vector2 inputVector = InputHandler.Instance.GetMovementVector();
 
 		moveDirection = new(inputVector.x, 0f, inputVector.y);
 

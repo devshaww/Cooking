@@ -20,11 +20,6 @@ public class TestNetworkUI : MonoBehaviour
         });
     }
 
-    private void Start()
-    {
-        Hide();
-    }
-
     public void Hide()
     {
         gameObject.SetActive(false);        
