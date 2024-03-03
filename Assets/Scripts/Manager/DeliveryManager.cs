@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class DeliveryManager : MonoBehaviour
+public class DeliveryManager : NetworkBehaviour
 {
     [SerializeField] private RecipeListSO recipelistSO;
 	public static DeliveryManager Instance { get; private set; }
@@ -28,11 +29,25 @@ public class DeliveryManager : MonoBehaviour
 
 	private void Update()
 	{
-		spawnRecipeTimer += Time.deltaTime;
-		if (spawnRecipeTimer >= spawnRecipeTimerMax) {
-			SpawnRecipe();
-			spawnRecipeTimer = 0f;
+		if (!IsServer) {
+			return;
 		}
+		spawnRecipeTimer -= Time.deltaTime;
+		if (spawnRecipeTimer <= 0) {
+			//SpawnRecipe();
+			spawnRecipeTimer = spawnRecipeTimerMax;
+			if (GameManager.Instance.IsGamePlaying() && waitingRecipsSOs.Count < maxSpawn) {
+				int randomIndex = UnityEngine.Random.Range(0, recipelistSO.recipeSOList.Count);
+				SpawnNewWatingRecipeClientRpc(randomIndex);
+			}
+		}
+	}
+
+	[ClientRpc]
+	private void SpawnNewWatingRecipeClientRpc(int index) {
+		RecipeSO recipeSO = recipelistSO.recipeSOList[index];
+		waitingRecipsSOs.Add(recipeSO);
+		OnRecipeSpawn?.Invoke(this, EventArgs.Empty);
 	}
 
 	private void SpawnRecipe() {
