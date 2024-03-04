@@ -6,6 +6,7 @@ public class InputHandler : MonoBehaviour
 {
 	public static InputHandler Instance { get; private set; }
 
+	// does not get destroyed automatically
 	private PlayerInputAction playerInputAction;
 
 	public event EventHandler OnInteractAction;

@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57783a67c688b4b608cf42d16b3554b6, type: 3}
   m_Name: _KitchenObjectList
   m_EditorClassIdentifier: 
-  kitchenObjectSOList: []
+  kitchenObjectSOList:
+  - {fileID: 11400000, guid: 429484db9f8a24552a084ca332ba5319, type: 2}
+  - {fileID: 11400000, guid: c3f3bfa2fc19542908bed3d621448b3d, type: 2}
+  - {fileID: 11400000, guid: d835dbf06670945b8adedde1ad97fa86, type: 2}
+  - {fileID: 11400000, guid: 34dfcc028550142edadc9a2cd23a7f70, type: 2}
+  - {fileID: 11400000, guid: dd149f380a5b14ade88f835b6393d130, type: 2}
+  - {fileID: 11400000, guid: 586ffb906cde94dfba25085214eda9c4, type: 2}
+  - {fileID: 11400000, guid: 04a2cfb24d3ea4937ae6dfe53ee9ce0d, type: 2}
+  - {fileID: 11400000, guid: b70980e35a221456388086a403dec788, type: 2}
+  - {fileID: 11400000, guid: 98fabd690337c46f38894f3f08872c07, type: 2}
+  - {fileID: 11400000, guid: f1c9281b051fc463cb5b59b32c3d3f2b, type: 2}
+  - {fileID: 11400000, guid: 10f16201f09df4ae5b002bebfaa63fb3, type: 2}

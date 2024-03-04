@@ -18,20 +18,22 @@ public class KitchenGameMultiplayer : NetworkBehaviour
         return kitchenObjectListSO.kitchenObjectSOList.IndexOf(kitchenObjectSO);
     }
 
-    public void SpawnKitchenObject(KitchenObjectSO kitchenObjectSO, IKitchenObjectOwner parent) {
-        SpawnKitchenObjectServerRpc(GetKitchenObjectSOIndex(kitchenObjectSO), parent.GetNetworkObject());
+    public void SpawnKitchenObject(KitchenObjectSO kitchenObjectSO, IKitchenObjectOwner owner) {
+        SpawnKitchenObjectServerRpc(GetKitchenObjectSOIndex(kitchenObjectSO), owner.GetNetworkObject());
 	}
 
     [ServerRpc(RequireOwnership = false)]
-    private void SpawnKitchenObjectServerRpc(int index, NetworkObjectReference parentReference) {
+    private void SpawnKitchenObjectServerRpc(int index, NetworkObjectReference ownerRef) {
         KitchenObjectSO kitchenObjectSO = kitchenObjectListSO.kitchenObjectSOList[index];
         Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.visualPrefab);
         NetworkObject networkObject = kitchenObjectTransform.GetComponent<NetworkObject>();
         networkObject.Spawn(true);
 
+        // code for parenting only runs on server side, so it needs another synchronization.
+        // client tells server the kitchen object's owner and server broadcast to other clients to sync.
 		KitchenObject kitchenObject = kitchenObjectTransform.GetComponent<KitchenObject>();
-        parentReference.TryGet(out NetworkObject parentNetworkObject);
-        IKitchenObjectOwner parent = parentNetworkObject.GetComponent<IKitchenObjectOwner>();
-        kitchenObject.SetOwner(parent);
+        ownerRef.TryGet(out NetworkObject ownerNetworkObject);
+        IKitchenObjectOwner owner = ownerNetworkObject.GetComponent<IKitchenObjectOwner>();
+        kitchenObject.SetOwner(owner);
     }
 }

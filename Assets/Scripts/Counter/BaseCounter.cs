@@ -2,7 +2,7 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
-public class BaseCounter : MonoBehaviour, IKitchenObjectOwner
+public class BaseCounter : NetworkBehaviour, IKitchenObjectOwner
 {
 	public static event EventHandler OnAnyObjectPlacedHere;
 	[SerializeField] private Transform spawnPoint;
@@ -54,6 +54,6 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectOwner
 
     public NetworkObject GetNetworkObject()
     {
-		return null;
+		return NetworkObject;
     }
 }

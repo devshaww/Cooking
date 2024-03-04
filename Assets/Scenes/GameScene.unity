@@ -466,6 +466,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4265382331
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -545,6 +550,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3004226521
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -813,6 +823,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3304691766031366589, guid: 001018b84bb1c47f0b99fda0762171f2,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4143699360
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001018b84bb1c47f0b99fda0762171f2, type: 3}
 --- !u!1 &160074877
@@ -1014,6 +1029,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: 1622291660960409521, guid: 9865807cd5a274cbf9f50e1d7ae4e522,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 186466659
+      objectReference: {fileID: 0}
     - target: {fileID: 4309549265795149214, guid: 9865807cd5a274cbf9f50e1d7ae4e522,
         type: 3}
       propertyPath: m_Name
@@ -2209,6 +2229,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2127062461
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -2288,6 +2313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 153281880
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -2505,6 +2535,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3474499442
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -2564,6 +2599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1537194642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595ee734fa781412989fe0ddd8adb225, type: 3}
@@ -2891,6 +2931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457452c0a078a48928412f650e3bef38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kitchenObjectListSO: {fileID: 11400000, guid: 7ff31a6d30ad54514b27ca03c187366e,
+    type: 2}
 --- !u!1 &570099577
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3162,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContainerCounter_Tomato
       objectReference: {fileID: 0}
+    - target: {fileID: 2791136619022101152, guid: 5904b860f9fbd40d9bc10cff9430f1b8,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2751697940
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5904b860f9fbd40d9bc10cff9430f1b8, type: 3}
 --- !u!1001 &578652482
@@ -3188,6 +3235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ContainerCounter_Bread
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518238874155490912, guid: 4f5dd9365a1b643cc9bd2d383f8eb42f,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 317889840
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f5dd9365a1b643cc9bd2d383f8eb42f, type: 3}
@@ -4248,6 +4300,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4228079834
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -4327,6 +4384,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 899477265
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -4794,6 +4856,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4139425598
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -4873,6 +4940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3993775393
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -5920,6 +5992,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1400419120
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -5999,6 +6076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2541684045
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -6450,6 +6532,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: 295775469957195536, guid: 57271a5e0c87a44f48f3b7f1128ba6a2,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1633268463
+      objectReference: {fileID: 0}
     - target: {fileID: 2979095608227196222, guid: 57271a5e0c87a44f48f3b7f1128ba6a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -6525,6 +6612,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: 295775469957195536, guid: 57271a5e0c87a44f48f3b7f1128ba6a2,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3310760139
+      objectReference: {fileID: 0}
     - target: {fileID: 2979095608227196222, guid: 57271a5e0c87a44f48f3b7f1128ba6a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -7213,6 +7305,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7313598259657142247, guid: fb3dcf4e169004506bdccecc12b52e33,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2229950583
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb3dcf4e169004506bdccecc12b52e33, type: 3}
 --- !u!1001 &1549599845
@@ -7222,6 +7319,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4182961242
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -7301,6 +7403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1773301489
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -7860,7 +7967,7 @@ PrefabInstance:
     - target: {fileID: 4845276930943762971, guid: 2da3dcc22749e7f4280737786d898334,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: -0.000022888184
       objectReference: {fileID: 0}
     - target: {fileID: 4845637959249703711, guid: 2da3dcc22749e7f4280737786d898334,
         type: 3}
@@ -8076,6 +8183,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 731486495
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -8156,6 +8268,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3063327559
+      objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -8181,6 +8298,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3360865993
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -8260,6 +8382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 361622145
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -8461,6 +8588,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3704004557
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -8540,6 +8672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2358870587
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -8747,6 +8884,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: 4997374864120317859, guid: 019ee695a272b44ad8d196321e00c208,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4047102772
+      objectReference: {fileID: 0}
     - target: {fileID: 7500512515722825100, guid: 019ee695a272b44ad8d196321e00c208,
         type: 3}
       propertyPath: m_Name
@@ -8816,6 +8958,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2221164913
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -8895,6 +9042,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 713938175
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -8979,6 +9131,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: 1353071227996889175, guid: 97b245cf4985d4bdaafda57a6c59fb32,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 446237717
+      objectReference: {fileID: 0}
     - target: {fileID: 1742721780551405505, guid: 97b245cf4985d4bdaafda57a6c59fb32,
         type: 3}
       propertyPath: spawnPoint
@@ -9221,6 +9378,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1913290834
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -9300,6 +9462,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 261564227
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -9635,6 +9802,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3440668371
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -9714,6 +9886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2698828362
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -9862,6 +10039,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1090025825
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -9942,6 +10124,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3063782808
+      objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -9967,6 +10154,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4180549273
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -10046,6 +10238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 364841470
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -10131,6 +10328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240025829698893175, guid: 3ab2561325eb04cf98b271a74e5a83ae,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4294604943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab2561325eb04cf98b271a74e5a83ae, type: 3}
@@ -10239,6 +10441,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1277520176
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -10318,6 +10525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1062761068
       objectReference: {fileID: 0}
     - target: {fileID: 5605487928006765573, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -10605,6 +10817,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 207943121
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -10684,6 +10901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1891526845
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -11340,6 +11562,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoveCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 7479859937953647202, guid: 911aaa8c98ada48718f06268f07281eb,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1663166642
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 911aaa8c98ada48718f06268f07281eb, type: 3}
 --- !u!4 &2064276945 stripped
@@ -11355,6 +11582,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4037204246
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -11434,6 +11666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2336575613
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
@@ -11730,6 +11967,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1035959778}
     m_Modifications:
+    - target: {fileID: -7851752381417132160, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 364216187
+      objectReference: {fileID: 0}
     - target: {fileID: 1719113182891801328, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
       propertyPath: m_Name
@@ -11809,6 +12051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221726378722635999, guid: 595ee734fa781412989fe0ddd8adb225,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1397495162
       objectReference: {fileID: 0}
     - target: {fileID: 6301210849938265537, guid: 595ee734fa781412989fe0ddd8adb225,
         type: 3}
