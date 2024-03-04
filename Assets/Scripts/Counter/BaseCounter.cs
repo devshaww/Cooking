@@ -1,4 +1,5 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 
 public class BaseCounter : MonoBehaviour, IKitchenObjectOwner
@@ -50,4 +51,9 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectOwner
 	public static void ResetStaticData() {
 		OnAnyObjectPlacedHere = null;
 	}
+
+    public NetworkObject GetNetworkObject()
+    {
+		return null;
+    }
 }

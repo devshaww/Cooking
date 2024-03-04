@@ -5,8 +5,13 @@ using UnityEngine;
 public class Player : NetworkBehaviour, IKitchenObjectOwner
 {
 	public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
-	public event EventHandler OnPickupSomething;
+	// Singleplayer Play Sound
+	//public event EventHandler OnPickupSomething;
+
 	public static event EventHandler OnAnyPlayerSpawned;
+	// Play sound
+	public static event EventHandler OnAnyPickupSomething;
+
 	public class OnSelectedCounterChangedEventArgs : EventArgs {
 		public BaseCounter selectedCounter;
 	}
@@ -43,6 +48,7 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 
 	public static void ResetStaticData() {
 		OnAnyPlayerSpawned = null;
+		OnAnyPickupSomething = null;
 	}
 
 	private void Start()
@@ -68,7 +74,7 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 		}
 	}
 
-	private void InputHandler_OnInteractAction(object sender, System.EventArgs e)
+	private void InputHandler_OnInteractAction(object sender, EventArgs e)
 	{
 		if (!GameManager.Instance.IsGamePlaying()) { return; }
 		if (selectedCounter != null)
@@ -131,7 +137,8 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 	{
 		kitchenObject = ko;
 		if (ko != null) {
-			OnPickupSomething?.Invoke(this, EventArgs.Empty);
+			//OnPickupSomething?.Invoke(this, EventArgs.Empty);
+			OnAnyPickupSomething?.Invoke(this, EventArgs.Empty);
 		}
 	}
 
@@ -154,4 +161,9 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 	{
 		return holdPoint;
 	}
+
+    public NetworkObject GetNetworkObject()
+    {
+		return NetworkObject;
+    }
 }
