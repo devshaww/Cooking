@@ -7,10 +7,12 @@ public class DeliveryManager : NetworkBehaviour
 {
     [SerializeField] private RecipeListSO recipelistSO;
 	public static DeliveryManager Instance { get; private set; }
+
+	// Events for updating order list visual
 	public event EventHandler OnRecipeSpawn;
 	public event EventHandler OnRecipeComplete;
 
-	// SFX Events
+	// SFX and DeliveryCounter visual Events
 	public event EventHandler OnRecipeSucceed;
 	public event EventHandler OnRecipeFail;
 
