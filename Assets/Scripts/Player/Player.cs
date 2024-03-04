@@ -6,11 +6,12 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 {
 	public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
 	public event EventHandler OnPickupSomething;
+	public static event EventHandler OnAnyPlayerSpawned;
 	public class OnSelectedCounterChangedEventArgs : EventArgs {
 		public BaseCounter selectedCounter;
 	}
 
-	//public static Player Instance { get; private set; }
+	public static Player LocalInstance { get; private set; }
 
 	[SerializeField] private int moveSpeed;
 	[SerializeField] private LayerMask counterLayerMask;
@@ -40,11 +41,22 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 		//Instance = this;
 	}
 
+	public static void ResetStaticData() {
+		OnAnyPlayerSpawned = null;
+	}
+
 	private void Start()
 	{
 		//inputHandler = GetComponent<InputHandler>();
 		InputHandler.Instance.OnInteractAction += InputHandler_OnInteractAction;
 		InputHandler.Instance.OnInteractAlternateAction += InputHandler_OnInteractAlternateAction;
+	}
+
+	public override void OnNetworkSpawn() {
+		if (IsOwner) {
+			LocalInstance = this;
+		}
+		OnAnyPlayerSpawned?.Invoke(this, EventArgs.Empty);
 	}
 
 	private void InputHandler_OnInteractAlternateAction(object sender, EventArgs e)
