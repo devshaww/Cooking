@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class PlatesCounter : BaseCounter
@@ -17,12 +18,12 @@ public class PlatesCounter : BaseCounter
 
 	private void Update()
 	{
+		if (!IsServer) { return; }
 		spawnTimer += Time.deltaTime;
 		if (spawnTimer >= spawnTimeDuration) {
 			spawnTimer = 0f;
 			if (stackSize < maxStackSize) {
-				stackSize += 1;
-				OnPlateSpawn?.Invoke(this, EventArgs.Empty);
+				SpawnPlateServerRpc();
 			}
 		}
 	}
@@ -32,9 +33,30 @@ public class PlatesCounter : BaseCounter
 		if (!player.HasKitchenObject()) {
 			if (stackSize > 0) {
 				KitchenObject.SpawnKitchenObject(plateKitchenObjectSO, player);
-				stackSize -= 1;
-				OnPlateTaken?.Invoke(this, EventArgs.Empty);
+				TakePlateServerRpc();				
 			}
 		}
+	}
+
+	[ServerRpc]
+	private void SpawnPlateServerRpc() {
+		SpawnPlateClientRpc();
+	}
+
+	[ClientRpc]
+	private void SpawnPlateClientRpc() {
+		stackSize += 1;
+		OnPlateSpawn?.Invoke(this, EventArgs.Empty);
+	}
+
+	[ServerRpc(RequireOwnership = false)]
+	private void TakePlateServerRpc() {
+		TakePlateClientRpc();
+	}
+
+	[ClientRpc]
+	private void TakePlateClientRpc() {		
+		stackSize -= 1;
+		OnPlateTaken?.Invoke(this, EventArgs.Empty);
 	}
 }
