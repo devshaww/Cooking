@@ -52,13 +52,13 @@ public class DeliveryManager : NetworkBehaviour
 		OnRecipeSpawn?.Invoke(this, EventArgs.Empty);
 	}
 
-	private void SpawnRecipe() {
-		if (waitingRecipsSOs.Count < maxSpawn) {
-			RecipeSO recipeSO = recipelistSO.recipeSOList[UnityEngine.Random.Range(0, recipelistSO.recipeSOList.Count)];
-			waitingRecipsSOs.Add(recipeSO);
-			OnRecipeSpawn?.Invoke(this, EventArgs.Empty);
-		}
-	}
+	//private void SpawnRecipe() {
+	//	if (waitingRecipsSOs.Count < maxSpawn) {
+	//		RecipeSO recipeSO = recipelistSO.recipeSOList[UnityEngine.Random.Range(0, recipelistSO.recipeSOList.Count)];
+	//		waitingRecipsSOs.Add(recipeSO);
+	//		OnRecipeSpawn?.Invoke(this, EventArgs.Empty);
+	//	}
+	//}
 
 	public bool DeliverRecipe(PlateKitchenObject plateKitchenObject) {
 		for (int i = 0; i < waitingRecipsSOs.Count; i++) {
@@ -79,19 +79,36 @@ public class DeliveryManager : NetworkBehaviour
 					}
 				}
 				if (plateContentsMatchesRecipe) {
-					Debug.Log("Delivered");
-					deliveredCount++;
-					waitingRecipsSOs.RemoveAt(i);
-					OnRecipeComplete?.Invoke(this, EventArgs.Empty);
-					OnRecipeSucceed?.Invoke(this, EventArgs.Empty);
+					DeliverSuccessServerRpc(i);
 					return true;
 				}
 			}
 		}
-		// No matches found
-		Debug.Log("No matches found");
-		OnRecipeFail?.Invoke(this, EventArgs.Empty);
+		DeliverFailedServerRpc();
 		return false;
+	}
+
+	[ServerRpc(RequireOwnership = false)]
+	private void DeliverSuccessServerRpc(int indexToRemove) {
+		DeliverSuccessClientRpc(indexToRemove);
+	}
+
+	[ClientRpc]
+	private void DeliverSuccessClientRpc(int indexToRemove) {
+		deliveredCount++;
+		waitingRecipsSOs.RemoveAt(indexToRemove);
+		OnRecipeComplete?.Invoke(this, EventArgs.Empty);
+		OnRecipeSucceed?.Invoke(this, EventArgs.Empty);
+	}
+
+	[ServerRpc(RequireOwnership = false)]
+	private void DeliverFailedServerRpc() {
+		DeliverFailedClientRpc();
+	}
+
+	[ClientRpc]
+	private void DeliverFailedClientRpc() {
+		OnRecipeFail?.Invoke(this, EventArgs.Empty);
 	}
 
 	public List<RecipeSO> GetWaitingRecipeSOList() {

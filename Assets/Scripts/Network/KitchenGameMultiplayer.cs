@@ -22,6 +22,10 @@ public class KitchenGameMultiplayer : NetworkBehaviour
         SpawnKitchenObjectServerRpc(GetKitchenObjectSOIndex(kitchenObjectSO), owner.GetNetworkObject());
 	}
 
+    public void DestroyKitchenObject(KitchenObject kitchenObject) {
+        DestroyKitchenObjectServerRpc(kitchenObject.NetworkObject);
+	}
+
     [ServerRpc(RequireOwnership = false)]
     private void SpawnKitchenObjectServerRpc(int index, NetworkObjectReference ownerRef) {
         KitchenObjectSO kitchenObjectSO = kitchenObjectListSO.kitchenObjectSOList[index];
@@ -35,5 +39,22 @@ public class KitchenGameMultiplayer : NetworkBehaviour
         ownerRef.TryGet(out NetworkObject ownerNetworkObject);
         IKitchenObjectOwner owner = ownerNetworkObject.GetComponent<IKitchenObjectOwner>();
         kitchenObject.SetOwner(owner);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void DestroyKitchenObjectServerRpc(NetworkObjectReference kitchenObjectRef) {
+        kitchenObjectRef.TryGet(out NetworkObject kitchenObjectNetworkObject);
+        KitchenObject ko = kitchenObjectNetworkObject.GetComponent<KitchenObject>();
+
+        ClearKitchenObjectOnOwnerClientRpc(kitchenObjectRef);
+        ko.DestroySelf();        
+    }
+
+    [ClientRpc]
+    private void ClearKitchenObjectOnOwnerClientRpc(NetworkObjectReference kitchenObjectRef) {
+        kitchenObjectRef.TryGet(out NetworkObject kitchenObjectNetworkObject);
+        KitchenObject ko = kitchenObjectNetworkObject.GetComponent<KitchenObject>();
+
+        ko.ClearKitchenObjectOnOwner();
     }
 }

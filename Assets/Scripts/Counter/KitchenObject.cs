@@ -25,13 +25,20 @@ public class KitchenObject : NetworkBehaviour
         SetOwnerServerRpc(owner.GetNetworkObject());
     }
 
-    public void DestroySelf() {
-        owner.ClearKitchenObject();
+    public void DestroySelf() {        
         Destroy(gameObject);
+    }
+
+    public void ClearKitchenObjectOnOwner() {
+        owner.ClearKitchenObject();
     }
 
     public static void SpawnKitchenObject(KitchenObjectSO kitchenObjectSO, IKitchenObjectOwner parent) {
         KitchenGameMultiplayer.Instance.SpawnKitchenObject(kitchenObjectSO, parent);
+	}
+
+    public static void DestroyKitchenObject(KitchenObject kitchenObject) {
+        KitchenGameMultiplayer.Instance.DestroyKitchenObject(kitchenObject);
 	}
 
     public bool TryGetPlate(out PlateKitchenObject plateKitchenObject) {
