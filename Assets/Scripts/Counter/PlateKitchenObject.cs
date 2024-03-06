@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class PlateKitchenObject : KitchenObject
 {
+    // KitchenObjectSOs that can be put on a plate
     [SerializeField] private List<KitchenObjectSO> validKitchenObjectSOs;
     private List<KitchenObjectSO> kitchenObjectSOs;
 
@@ -24,11 +26,22 @@ public class PlateKitchenObject : KitchenObject
             return false;
         }
         if (!kitchenObjectSOs.Contains(kitchenObjectSO)) {
-            kitchenObjectSOs.Add(kitchenObjectSO);
-            OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs { kitchenObjectSO = kitchenObjectSO });
+            AddIngredientServerRpc(KitchenGameMultiplayer.Instance.GetKitchenObjectSOIndex(kitchenObjectSO));
             return true;
         }
         return false;  
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void AddIngredientServerRpc(int index) {
+        AddIngredientClientRpc(index);
+    }
+
+    [ClientRpc]
+    private void AddIngredientClientRpc(int index) {
+        KitchenObjectSO kitchenObjectSO = KitchenGameMultiplayer.Instance.GetKitchenObjectSOAtIndex(index);
+        kitchenObjectSOs.Add(kitchenObjectSO);
+        OnIngredientAdd?.Invoke(this, new OnIngredientAddEventArgs { kitchenObjectSO = kitchenObjectSO });
     }
 
     public List<KitchenObjectSO> GetKitchenObjectSOList() {

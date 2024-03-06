@@ -16,14 +16,15 @@ public class ClearCounter : BaseCounter, IKitchenObjectOwner
 			if (!player.HasKitchenObject()) {
 				GetKitchenObject().SetOwner(player);
 			} else {
+				// Player holding a plate
 				if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
 					if (plateKitchenObject.TryAddIngredient(GetKitchenObject().KitchenObjectSO)) {
-						GetKitchenObject().DestroySelf();
+						KitchenObject.DestroyKitchenObject(GetKitchenObject());
 					}
-				} else {
+				} else { // Counter holding a plate, player adds ingredient to plate
 					if (GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject1)) {
 						if (plateKitchenObject1.TryAddIngredient(player.GetKitchenObject().KitchenObjectSO)) {
-							player.GetKitchenObject().DestroySelf();
+							KitchenObject.DestroyKitchenObject(player.GetKitchenObject());
 						}
 					}
 				}

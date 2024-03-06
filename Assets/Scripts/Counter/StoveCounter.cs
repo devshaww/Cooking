@@ -92,7 +92,7 @@ public class StoveCounter : BaseCounter, IProgressible
 				if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
 					if (plateKitchenObject.TryAddIngredient(GetKitchenObject().KitchenObjectSO)) {
 						KitchenObject.DestroyKitchenObject(GetKitchenObject());
-						state.Value = State.Idle;
+						SetStateIdleServerRpc();
 					}	
 				}
 			}
