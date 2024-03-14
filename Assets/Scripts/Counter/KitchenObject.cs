@@ -69,6 +69,7 @@ public class KitchenObject : NetworkBehaviour
 		owner.SetKitchenObject(this);
         //transform.parent = owner.GetSpawnPoint();
         //transform.localPosition = Vector3.zero;
+        // 设置owner的spawnpoint的transform，并在LateUpdate里根据spawnpoint的transform不断更新
         followTransform.SetTargetTransform(owner.GetSpawnPoint());
     }
 

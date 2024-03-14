@@ -9,7 +9,7 @@ public class GamePauseUI : MonoBehaviour
 
     public static GamePauseUI Instance;
 
-    // cannot deactivate in Awake() because that way Start() won't get called
+    // cannot deactivate in Awake() because that way Start() won't get called(Start() called on activated object)
     private void Awake()
     {
         Instance = this;

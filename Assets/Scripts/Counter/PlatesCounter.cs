@@ -19,9 +19,10 @@ public class PlatesCounter : BaseCounter
 	private void Update()
 	{
 		if (!IsServer) { return; }
-		spawnTimer += Time.deltaTime;
-		if (spawnTimer >= spawnTimeDuration) {
-			spawnTimer = 0f;
+		if (!GameManager.Instance.IsGamePlaying()) { return; }
+		spawnTimer -= Time.deltaTime;
+		if (spawnTimer <= 0f) {
+			spawnTimer = spawnTimeDuration;
 			if (stackSize < maxStackSize) {
 				SpawnPlateServerRpc();
 			}

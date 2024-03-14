@@ -11,7 +11,7 @@ public class SelectedCounterVisual : MonoBehaviour
 	{
 		if (Player.LocalInstance != null) {
 			Player.LocalInstance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
-		} else {
+		} else { // 到这里如果Player Network还未生成 即OnAnyPlayerSpawned还未被Invoke 则确保事件会被绑定上
             Player.OnAnyPlayerSpawned += Player_OnAnyPlayerSpawned;
 		}
 	}
@@ -19,7 +19,7 @@ public class SelectedCounterVisual : MonoBehaviour
     private void Player_OnAnyPlayerSpawned(object sender, System.EventArgs e)
     {
         if (Player.LocalInstance != null) {
-			Player.LocalInstance.OnSelectedCounterChanged -= Player_OnSelectedCounterChanged;
+			Player.LocalInstance.OnSelectedCounterChanged -= Player_OnSelectedCounterChanged; // ???
 			Player.LocalInstance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
 		}
     }

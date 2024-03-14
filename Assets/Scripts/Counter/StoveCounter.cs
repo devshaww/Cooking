@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -38,7 +36,7 @@ public class StoveCounter : BaseCounter, IProgressible
 		OnStateChange?.Invoke(this, new OnStateChangeEventArgs { state = state.Value });
 		if (state.Value == State.Burned || state.Value == State.Idle) {
 			OnProgressUpdate?.Invoke(this, new IProgressible.OnProgressChangeEventArgs { progressNormalized = 0f });
-		}
+		}		
 	}
 
     private void Update()
@@ -140,5 +138,9 @@ public class StoveCounter : BaseCounter, IProgressible
 		}
 		recipeSO = null;
 		return false;
+	}
+
+	public bool IsFried() {
+		return state.Value == State.Fried;
 	}
 }

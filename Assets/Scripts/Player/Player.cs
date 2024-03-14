@@ -20,8 +20,10 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 
 	[SerializeField] private int moveSpeed;
 	[SerializeField] private LayerMask counterLayerMask;
+	[SerializeField] private LayerMask collisionLayerMask;
 	[SerializeField] private Transform holdPoint;
 	[SerializeField] private InputHandler inputHandler;
+	[SerializeField] private Vector3[] playerSpawnPointList;
 
 	private bool isWalking;
     public bool IsWalking { get => isWalking; }
@@ -35,7 +37,7 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 
 	private const float interactDistance = 2f;
 	private const float playerHeight = 2.0f;
-	private const float capsuleRadius = 0.7f;
+	private const float playerRadius = 0.7f;
 
 	private void Awake()
 	{
@@ -62,7 +64,8 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 		if (IsOwner) {
 			LocalInstance = this;
 		}
-		OnAnyPlayerSpawned?.Invoke(this, EventArgs.Empty);
+		transform.position = playerSpawnPointList[(int)OwnerClientId];
+		OnAnyPlayerSpawned?.Invoke(this, EventArgs.Empty);  // 保证绑定SelectCounterVisual事件成功
 	}
 
 	private void InputHandler_OnInteractAlternateAction(object sender, EventArgs e)
@@ -100,7 +103,23 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 		isWalking = moveDirection != Vector3.zero;
 		float moveDistance = moveSpeed * Time.deltaTime;
 		
-		bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, capsuleRadius, moveDirection, moveDistance);
+		bool canMove = !Physics.BoxCast(transform.position, Vector3.one * playerRadius, moveDirection, Quaternion.identity, moveDistance, collisionLayerMask);
+
+		if (!canMove) {
+			// test if can move horizontally
+			Vector3 moveDirX = new(moveDirection.x, 0, 0);
+			canMove = !Physics.BoxCast(transform.position, Vector3.one * playerRadius, moveDirX, Quaternion.identity, moveDistance, collisionLayerMask);
+			if (canMove) {
+				moveDirection = moveDirX;
+			} else {
+				// test if can move vertically
+				Vector3 moveDirZ = new(0, 0, moveDirection.z);
+				canMove = !Physics.BoxCast(transform.position, Vector3.one * playerRadius, moveDirZ, Quaternion.identity, moveDistance, collisionLayerMask);
+				if (canMove) {
+					moveDirection = moveDirZ;
+				}
+			}
+		}
 
 		if (canMove)
 		{
@@ -138,7 +157,7 @@ public class Player : NetworkBehaviour, IKitchenObjectOwner
 		kitchenObject = ko;
 		if (ko != null) {
 			//OnPickupSomething?.Invoke(this, EventArgs.Empty);
-			OnAnyPickupSomething?.Invoke(this, EventArgs.Empty);
+			OnAnyPickupSomething?.Invoke(this, EventArgs.Empty);  // Play sound event
 		}
 	}
 

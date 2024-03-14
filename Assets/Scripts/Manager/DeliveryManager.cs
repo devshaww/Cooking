@@ -18,7 +18,7 @@ public class DeliveryManager : NetworkBehaviour
 
     private List<RecipeSO> waitingRecipsSOs;
 
-	private float spawnRecipeTimer = 4f;
+	private float spawnRecipeTimer;
 	private float spawnRecipeTimerMax = 4f;
 	private int maxSpawn = 4;
 	private int deliveredCount;

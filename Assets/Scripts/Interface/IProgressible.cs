@@ -7,6 +7,6 @@ public interface IProgressible
 {
 	public event EventHandler<OnProgressChangeEventArgs> OnProgressUpdate;
     public class OnProgressChangeEventArgs : EventArgs {
-		public float progressNormalized;
+		public float progressNormalized;		 
 	}
 }

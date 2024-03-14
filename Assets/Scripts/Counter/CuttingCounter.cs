@@ -84,8 +84,8 @@ public class CuttingCounter : BaseCounter, IProgressible
 	[ClientRpc]
 	private void CutObjectClientRpc() {
 		cuttingProgress++;
-		OnCut?.Invoke(this, EventArgs.Empty);
-		OnAnyCut?.Invoke(this, EventArgs.Empty);
+		OnCut?.Invoke(this, EventArgs.Empty);      // Animation plays on server and clients
+		OnAnyCut?.Invoke(this, EventArgs.Empty);   // SoundManager plays sound on server and clients
 		TryGetRecipeWithInput(GetKitchenObject().KitchenObjectSO, out CuttingRecipeSO recipeSO);
 		OnProgressUpdate?.Invoke(this, new IProgressible.OnProgressChangeEventArgs { progressNormalized = cuttingProgress / recipeSO.cuttingTime });		
 	}
